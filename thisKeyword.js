@@ -194,4 +194,41 @@ The behavior of "this" inside a function depends on the mode:
   | Event handler (in browser)          | The HTML element that received the event |
   */
   
-  
+// -------------------------------------------
+// 🔹 this Inside a DOM
+// -------------------------------------------
+
+/*
+  when you use this keyword inside a button it reffrence to the html element that handle have
+  <button onclick="console.log(`clicked`, this)">Click me</button>
+  -> In this case the output will be the button element itself
+*/
+
+// output based questions 
+// let user = {
+//   name: "Piyush",
+//   age: 24,
+//     childObj:{
+//         newName:"Roadside Coder",
+//         getDetails() {
+//             console.log(this.newName, "and" ,this.name);
+//         }
+//     }
+// };
+
+// user.childObj.getDetails() // Roadside Coder and  undefined
+/*
+👉 Explanation:
+  When user.childObj.getDetails() is called this keyword inside the 
+  getDetails Method will points to the ChildObj so this.newName will get prited and this.name is not available
+  so it will be undefined.
+*/
+
+// const user = {
+//   firstName: 'Piyush!',
+//   getName() {
+//     const firstName = 'Jen!';
+//     return this.firstName;
+//   }
+// };
+// console.log(user.getName()); // Piyush will get printed
